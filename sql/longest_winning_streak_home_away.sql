@@ -1,3 +1,8 @@
+"""
+Calculates the longest winning streak for each team by combining home and away matches,
+tracking consecutive wins over time and returning the maximum win streak per team.
+"""
+
 WITH all_matches AS (
     SELECT
         home_team_name AS team,
