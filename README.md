@@ -64,6 +64,25 @@ Each query answers a specific analytical question using BigQuery-compatible SQL.
 
 ---
 
+### 📅 Premier League Matchday 1 Matches
+
+**Objective:**  
+Get all Premier League matches from matchday 1.
+
+**Approach:**  
+- Filter match data by competition code and matchday
+- Return full match records for exploratory analysis
+
+**Key SQL Concepts:**
+- `WHERE` filtering
+- Dataset-level querying
+
+📸 **Query Output**
+
+<img width="1100" height="259" alt="Image" src="https://github.com/user-attachments/assets/4bde3327-ddf0-41bf-a520-9b56865bc415" />
+
+---
+
 ### ⚽ Total Goals Scored per Team
 
 **Objective:**  
@@ -100,27 +119,6 @@ Identify the longest consecutive winning streak for each team.
 - Analytical aggregation
 
 📸 **Query Output**
-
-
----
-
-### 📅 Premier League Matchday 1 Matches
-
-**Objective:**  
-Get all Premier League matches from matchday 1.
-
-**Approach:**  
-- Filter match data by competition code and matchday
-- Return full match records for exploratory analysis
-
-**Key SQL Concepts:**
-- `WHERE` filtering
-- Dataset-level querying
-
-📸 **Query Output**
-
-
-
 
 ---
 
