@@ -79,7 +79,7 @@ Get all Premier League matches from matchday 1.
 
 📸 **Query Output**
 
-<img width="1100" height="259" alt="Image" src="https://github.com/user-attachments/assets/4bde3327-ddf0-41bf-a520-9b56865bc415" />
+<img width="1100" height="350" alt="Image" src="https://github.com/user-attachments/assets/4bde3327-ddf0-41bf-a520-9b56865bc415" />
 
 ---
 
@@ -98,8 +98,7 @@ Calculate the total number of goals scored by each team across all matches.
 - Grouped analytics
 
 📸 **Query Output**
-
-
+<img width="1100" height="350" alt="Image" src="https://github.com/user-attachments/assets/c1692726-15f1-487a-be43-277b1c99c85d" />
 ---
 
 ### 🏆 Longest Winning Streak per Team
@@ -119,7 +118,7 @@ Identify the longest consecutive winning streak for each team.
 - Analytical aggregation
 
 📸 **Query Output**
-
+<img width="1100" height="600" alt="Image" src="https://github.com/user-attachments/assets/9e038c71-4e01-4ac2-88e1-9a26bc90cb0b" />
 ---
 
 ## Technologies Used
