@@ -50,9 +50,10 @@ if __name__ == "__main__":
     df_matches = transform_matches(raw_data)
 
     # Save
-    df_matches.to_csv(output_path, index=False)
+    output_dir = Path(output_path).parent
 
     # Inspect
     print(df_matches.head())
+    print(df_matches.tail())
     print(f"\nTotal matches transformed: {len(df_matches)}")
     print(f"Saved transformed data to {output_path}")
