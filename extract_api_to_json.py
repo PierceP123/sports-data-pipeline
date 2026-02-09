@@ -16,26 +16,25 @@ response = requests.get(URL, headers=headers)
 response.raise_for_status()
 
 data = response.json()
+print("API lastUpdated values:")
+for m in data.get("matches", [])[:3]:
+    print(m.get("lastUpdated"))
 
-# Get the directory where this script is located
+
 script_dir = os.path.dirname(os.path.abspath(__file__))
-
-# Go up one level to the project root (sports-data-pipeline)
 project_root = os.path.dirname(script_dir)
-
-# Build the path to data/raw from project root
 output_dir = os.path.join(project_root, "data", "raw")
 output_path = os.path.join(output_dir, "pl_matches_25_26.json")
 
-# Create directory if it doesn't exist
 os.makedirs(output_dir, exist_ok=True)
 
-# Write the file
 with open(output_path, "w", encoding="utf-8") as file_output:
     json.dump(data, file_output, indent=2)
 
 print(f"Data saved successfully to {output_path}")
 print(f"Matches: {len(data.get('matches', []))}")
+
+# Test file path bug - successful 
 print(f"Script directory: {script_dir}")
 print(f"Project root: {project_root}")
-print(f"Output path: {output_path}")
+print(f"Output data file path: {output_path}")
