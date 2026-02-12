@@ -1,8 +1,10 @@
 # Sports Data Pipeline
 
-A data engineering project that ingests football match data from a public API, processes and models the data using Python, and loads analytics ready tables into Google BigQuery for SQL based analysis.
+A data engineering project that ingests football match data from a public API (FOOTBALL DATA.org), processes and models the data using Python, and loads analytics ready tables into Google BigQuery for SQL based analysis. All done in an automated workflow with Linux cron scheduling when pipeline is to be run.
 
-This project demonstrates core data engineering skills including ETL/ELT design, data modeling, cloud data warehousing, and analytical SQL.
+This project demonstrates core data engineering skills including ETL/ELT design, data modeling, cloud data warehousing, automation and analytical SQL.
+
+Raw and processed data is visable for learning purposes but if had sensitive data it would be gitignore'd.
 
 ---
 
@@ -28,11 +30,14 @@ The objective of this project is to design a reliable data pipeline that transfo
    - Data is reshaped into structured, analytics-ready tables.
 
 4. **Data Warehouse**
-   - Transformed data is loaded into Google BigQuery.
+   - Transformed data is loaded into Google BigQuery via Python script.
    - Tables are optimized for analytical querying.
 
 5. **Analytics Layer**
    - SQL queries are used to analyze team performance, match outcomes, and trends.
+
+6. **Automation of Pipeline**
+   - Linux cron job is used to automate pipeline to run everyweek which in turn updates data to return new outcomes for queries.
 
 ---
 
@@ -53,14 +58,14 @@ Primary analytics table (`football_data.matches`) includes:
 - `away_goals`
 - `last_updated`
 
-This schema supports both match-level and team-level analysis.
+This schema supports both match level and team level analysis.
 
 ---
 
 ## SQL Analytics
 
 Analytical SQL queries are stored in the `sql/` directory.  
-Each query answers a specific analytical question using BigQuery-compatible SQL.
+Each query answers a specific analytical question using BigQuery compatible SQL.
 
 ---
 
@@ -121,17 +126,29 @@ Identify the longest consecutive winning streak for each team.
 <img width="1100" height="600" alt="Image" src="https://github.com/user-attachments/assets/9e038c71-4e01-4ac2-88e1-9a26bc90cb0b" />
 ---
 
+### 🏆 Expected Match Result (Home / Away / Draw)
+
+**Objective:**  
+Predict result of each match based on goals scored (Home Win, Away Win, or Draw).
+
+**Approach:**  
+- Compare home_goals_fulltime and away_goals_fulltime
+- Use a CASE expression to classify match outcomes
+- Create a new column (match_result) for analytical use
+
+**Key SQL Concepts:**
+- CASE expressions
+- Conditional logic in SQL
+- Derived / calculated columns
+
+📸 **Query Output**
+<img width="1100" height="600" alt="Image" src="https://github.com/user-attachments/assets/d65618e4-f884-4a0b-8265-ffa26dab53f9" />
+
 ## Technologies Used
 
 - **Python** – Data ingestion, transformation, and pipeline logic
 - **Google BigQuery** – Cloud data warehouse
 - **SQL** – Analytical querying and reporting
 - **Git / GitHub** – Version control and documentation
+- **Linux** - Automation and execution of pipeline
 
----
-
-## Future Improvements
-
-- Automate pipeline execution using cron or a workflow scheduler
-- Implement incremental and partitioned loads in BigQuery
-- Add data quality checks and logging
