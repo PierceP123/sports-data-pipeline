@@ -54,8 +54,8 @@ Primary analytics table (`football_data.matches`) includes:
 - `country`
 - `home_team_name`
 - `away_team_name`
-- `home_goals`
-- `away_goals`
+- `home_goals_fulltime`
+- `away_goals_fulltime`
 - `last_updated`
 
 This schema supports both match level and team level analysis.
